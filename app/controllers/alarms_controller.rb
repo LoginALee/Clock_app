@@ -1,0 +1,2 @@
+class AlarmsController < ApplicationController
+end
