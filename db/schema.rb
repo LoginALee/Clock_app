@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_17_194925) do
+ActiveRecord::Schema.define(version: 2021_02_18_024320) do
 
   create_table "alarms", force: :cascade do |t|
     t.datetime "date_to_sound"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_194925) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "time_zone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
