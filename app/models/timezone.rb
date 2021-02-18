@@ -1,3 +1,3 @@
 class Timezone < ApplicationRecord
-  serialize :fav_timezones, Array
+  belongs_to :user
 end

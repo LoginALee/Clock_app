@@ -1,2 +1,14 @@
-<h1>Timezones index<h1>
-
+<div class="container">
+  <h3>My Time Zones</h3>
+  <div class="card m-3" style="width: 18rem;">
+    <%= image_tag ("globe-icon.png"), class: "w-25 m-auto" %>
+    <div class="card-body">
+      <h5 class="card-title">Current Time Zone</h5>
+      <p class="card-text"><%= time_zone_format(@current_time_zone) %></p>
+      <%= link_to "Edit", edit_time_zone_path(current_user), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <%= render @time_zones %>
+  </div>
+</div>
