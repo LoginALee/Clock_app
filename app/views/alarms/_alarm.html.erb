@@ -1,0 +1,12 @@
+<li class="list-group-item">
+  <div class="row">
+    <h5 class=" m-0 mx-1"><%= alarm.time.strftime("%H:%M") %></h5>
+    <%= render partial: "days", collection: alarm.days %>
+    <div class="row justify-content-end ml-auto">
+      <%= link_to "Edit", edit_alarm_path(alarm), class: "btn btn-primary mr-1" %>
+      <%= link_to "Destroy", alarm_path(alarm), class: "btn btn-danger mr-3",
+                                                method: :delete,
+                                                data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</li>
