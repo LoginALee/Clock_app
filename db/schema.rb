@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_18_024320) do
+ActiveRecord::Schema.define(version: 2021_02_18_092937) do
 
   create_table "alarms", force: :cascade do |t|
-    t.datetime "date_to_sound"
+    t.string "days"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "time"
     t.index ["user_id"], name: "index_alarms_on_user_id"
   end
 
