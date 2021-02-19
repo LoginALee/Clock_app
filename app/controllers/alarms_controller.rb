@@ -1,4 +1,5 @@
 class AlarmsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_alarm, only: %i[destroy edit update]
 
   def index
