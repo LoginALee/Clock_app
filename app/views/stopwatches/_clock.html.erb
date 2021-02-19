@@ -1,0 +1,18 @@
+<div class="mt-5">
+  <%= form_with model: stopwatch, remote: true do |form| %>
+    <div class="row justify-content-center">
+      <div class="circle border border-primary rounded-circle d-flex justify-content-center align-items-center">
+        <%= form.hidden_field :time, id: "display-input" %>
+        <h4 class="m-0" id="display">00:00:00</h4>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <button type="button" class="buttonPlay btn-primary mx-1" id="playButton">Play</button>
+      <button type="button" class="buttonPlay btn-primary mx-1 d-none" id="pauseButton">Pause</button>
+      <button type="button" class="buttonReset btn-danger" id="resetButton">Reset</button>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <%= form.submit "Save Time", class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>

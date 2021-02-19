@@ -1,0 +1,10 @@
+<li class="list-group-item">
+  <div class="row">
+    <h5><%= stopwatch.time %></h5>
+    <div class="row justify-content-end ml-auto">
+      <%= link_to "Destroy", stopwatch_path(stopwatch), class: "btn btn-danger mr-3",
+                                                        method: :delete,
+                                                        data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</li>
