@@ -1,0 +1,6 @@
+<div class="row justify-content-end ml-auto">
+  <%= link_to "Edit", edit_alarm_path(alarm), class: "btn btn-primary mr-1" %>
+  <%= link_to "Delete", alarm_path(alarm), class: "btn btn-danger mr-3",
+                                                method: :delete,
+                                                data: { confirm: "Are you sure?" } %>
+</div>
