@@ -15,6 +15,7 @@ class AlarmsController < ApplicationController
   def create
     @alarm = current_user.alarms.build(alarm_params)
     if @alarm.save
+      UserMailer.with(user: current_user, alarm: @alarm).alarm_activated.deliver_later
       redirect_to alarms_path
     else
       render :new

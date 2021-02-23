@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi, <%= @user.email %></h1>
+    <p>
+      You have activeted the next alarm,
+      Alarm Hour: <%= @alarm.time.strftime("%H:%M") %>.<br>
+      Days: <%= @alarm.days %>.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for using ClockApp!</p>
+  </body>
+</html>
