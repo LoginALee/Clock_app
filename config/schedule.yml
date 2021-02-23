@@ -1,0 +1,3 @@
+daily_report:
+  cron: "*/1 * * * *"
+  class: "DailyReportJob"
