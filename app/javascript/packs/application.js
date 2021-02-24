@@ -10,6 +10,7 @@ import "channels"
 import "bootstrap"
 import "css/styles"
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'jquery'
 
 
 Rails.start()
