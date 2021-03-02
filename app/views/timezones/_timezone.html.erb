@@ -2,8 +2,8 @@
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Time Zone</h5>
-      <p class="card-text"><%= time_zone_format(timezone.fav_timezones) %></p>
-      <p class="font-italic small"><%= time_zone_info(timezone.fav_timezones) %></p>
+      <p class="card-text"><%= time_zone_format(timezone.name) %></p>
+      <p class="font-italic small"><%= time_zone_info(timezone.name) %></p>
       <%= link_to "Delete", timezone_path(timezone), class: "btn btn-danger",
                                                       method: :delete,
                                                       data: { confirm: "Are you sure?" } %>

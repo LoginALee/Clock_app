@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_075213) do
+ActiveRecord::Schema.define(version: 2021_03_01_174839) do
 
   create_table "alarms", force: :cascade do |t|
     t.string "days"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_02_19_075213) do
   end
 
   create_table "timezones", force: :cascade do |t|
-    t.text "fav_timezones"
+    t.text "name"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
