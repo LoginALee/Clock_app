@@ -4,7 +4,7 @@ class TimezonesController < ApplicationController
 
   def index
     @current_time_zone = current_user.time_zone
-    @time_zones = current_user.timezones.all
+    @time_zones = current_user.timezones
   end
 
   def new
@@ -28,10 +28,10 @@ class TimezonesController < ApplicationController
   private
 
   def set_timezone
-    @time_zone = current_user.timezones.find(params[:id])
+    @time_zone = Timezone.find(params[:id])
   end
 
   def time_zone_params
-    params.require(:timezone).permit(:fav_timezones)
+    params.require(:timezone).permit(:name)
   end
 end

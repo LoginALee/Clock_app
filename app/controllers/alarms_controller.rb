@@ -42,7 +42,7 @@ class AlarmsController < ApplicationController
   private
 
   def set_alarm
-    @alarm = current_user.alarms.find(params[:id])
+    @alarm = Alarm.find(params[:id])
   end
 
   def alarm_params

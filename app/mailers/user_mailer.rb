@@ -14,19 +14,10 @@ class UserMailer < ApplicationMailer
   end
 
   def stopwatch_records(user)
-    @stopwatches = []
-
-    user.stopwatches.each do |stopwatch|
-      @stopwatches.push(stopwatch) if stopwatch.created_at.strftime('%Y-%m-%d') == Date.today.to_s
-    end
-    @stopwatches
+    user.stopwatches.where('DATE(created_at) = ?', Date.today)
   end
 
   def alarms_for_tomorrow(user)
-    @alarms = []
-    user.alarms.each do |alarm|
-      @alarms.push(alarm) if alarm.days.include?(Date.tomorrow.strftime('%A'))
-    end
-    @alarms
+    user.alarms.where('days like ?', "%#{Date.tomorrow.strftime('%A')}%")
   end
 end

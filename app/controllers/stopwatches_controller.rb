@@ -7,10 +7,6 @@ class StopwatchesController < ApplicationController
     @stopwatches = current_user.stopwatches.all
   end
 
-  def new
-    @stopwatch = current_user.stopwatches.build
-  end
-
   def create
     @stopwatch = current_user.stopwatches.build(stopwatch_params)
 
