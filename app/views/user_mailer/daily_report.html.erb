@@ -31,7 +31,8 @@
     <h5>Alarms for <%= Date.tomorrow.strftime('%A') %></h5>
     <ul class="list-group list-group-flush">
       <% @alarms.each do |alarm| %>
-        <li class="list-group-item"><%= alarm.time.strftime("%H:%M") %></li>
+        <% alarm_presenter = AlarmPresenter.new(alarm) %>
+        <li class="list-group-item"><%= alarm_presenter.time_with_hour_minutes %></li>
       <% end %>
     </ul>
     <p>Thanks for using ClockApp!</p>

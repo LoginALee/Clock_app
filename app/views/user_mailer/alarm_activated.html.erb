@@ -9,8 +9,9 @@
     <p>
       You have activated the next alarm,
     </p>
-    <p>Alarm Hour: <%= @alarm.time.strftime("%H:%M") %></p>
-    <p>Days: <%= @alarm.days.join(', ') %></p>
+    <% alarm_presenter = AlarmPresenter.new(@alarm) %>
+    <p>Alarm Hour: <%= alarm_presenter.time_with_hour_minutes %></p>
+    <p>Days: <%= alarm_presenter.days_inline %></p>
     <p>
       To login to the site, just follow this link: <%= @url %>.
     </p>

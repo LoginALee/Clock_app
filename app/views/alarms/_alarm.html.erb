@@ -1,7 +1,8 @@
 <li class="list-group-item">
   <div class="row">
-    <h5 class=" m-0 mx-1"><%= alarm.time_format %></h5>
-    <%= render partial: "day", collection: alarm.days %>
+    <% alarm_presenter = AlarmPresenter.new(alarm) %>
+    <h5 class=" m-0 mx-1"><%= alarm_presenter.time_with_hour_minutes %></h5>
+    <%= render partial: "day", collection: alarm_presenter.days_abbreviations %>
     <%= render partial: "buttons", locals: { alarm: alarm } %>
   </div>
 </li>
