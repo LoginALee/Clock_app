@@ -14,7 +14,7 @@
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="bi bi-person-square"></i>
+        <%= image_tag (current_user.avatar), class: "img-profile-nav" %>
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
