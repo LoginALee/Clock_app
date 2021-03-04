@@ -30,6 +30,8 @@ gem 'redis', '~> 4.2', '>= 4.2.5'
 
 gem 'haml', '~> 5.2', '>= 5.2.1'
 
+gem 'active_storage_validations', '~> 0.9.2'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
