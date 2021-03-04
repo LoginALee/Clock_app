@@ -1,8 +1,7 @@
-%li.list-group-item
-  .row
-    %h5= stopwatch.time
-    .row.justify-content-end.ml-auto
-      = link_to "Delete", stopwatch_path(stopwatch), class: "btn btn-danger mr-3",
+%tr
+  %td= stopwatch.name
+  %td= stopwatch.time
+  %td= stopwatch.laps_print
+  %td= link_to "Delete", stopwatch_path(stopwatch), class: "btn btn-danger mr-3",
                                                         method: :delete,
                                                         data: { confirm: "Are you sure?" }
-    

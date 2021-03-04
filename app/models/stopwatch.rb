@@ -8,4 +8,8 @@ class Stopwatch < ApplicationRecord
   def default_value_name
     self.name ||= Date.today
   end
+
+  def laps_print
+    laps.join(', ')
+  end
 end
