@@ -1,0 +1,8 @@
+.container
+  %h3 Stopwatch
+  = render "clock", stopwatch: @stopwatch
+  .row.mt-5.mx-auto.w-50
+    %h5 Records
+    %ul.list-group.list-group-flush.w-100
+      = render @stopwatches
+= javascript_pack_tag "clock"
