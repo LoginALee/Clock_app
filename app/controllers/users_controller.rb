@@ -4,6 +4,13 @@ class UsersController < ApplicationController
 
   def edit_time_zone; end
 
+  def edit; end
+
+  def update
+    current_user.update(user_params)
+    redirect_back(fallback_location: root_path)
+  end
+
   def update_time_zone
     current_user.update(user_params)
     redirect_to timezones_path
@@ -16,6 +23,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:time_zone)
+    params.require(:user).permit(:avatar)
   end
 end
