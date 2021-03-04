@@ -1,0 +1,13 @@
+.container
+  %h3 My Time Zones
+  %div.card.ml-3.mt-3.mb-4.some{ style: 'width: 18rem;' }
+    = image_tag ("globe-icon.png"), class: "w-25 m-auto"
+    .card-body
+      %h5.card-title Current Time Zone
+      %p.card-text= time_zone_format(@current_time_zone)
+      = link_to "Edit", edit_time_zone_path(current_user), class: "btn btn-primary"
+  %h4 Favorites
+  .row.justify-content-end
+    = link_to "New Time Zone", new_timezone_path, class: "btn btn-primary ml-auto"
+  .row.mt-2
+    = render @time_zones
