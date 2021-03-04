@@ -28,6 +28,8 @@ gem 'sidekiq-cron', '~> 1.2'
 
 gem 'redis', '~> 4.2', '>= 4.2.5'
 
+gem 'haml', '~> 5.2', '>= 5.2.1'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
