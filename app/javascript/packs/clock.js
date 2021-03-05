@@ -49,7 +49,7 @@ function genereteInputLap(value) {
   field = document.createElement("input");
   field.type = "hidden";
   field.name = "stopwatch[laps][]";
-  field.value = value
+  field.value = value;
   return field;
 }
 
@@ -81,8 +81,12 @@ function reset() {
 
 function lap() {
   let lapTime = elapsedTime - lastLapTime;
-  lastLapTime = elapsedTime;
-  printLap(timeToString(lapTime));
+  if (lapTime > 0) {
+    lastLapTime = elapsedTime;
+    printLap(timeToString(lapTime));
+  } else {
+    alert("Invalid Lap.");
+  }
 }
 
 // Create function to display buttons
@@ -92,14 +96,12 @@ function showButton(buttonKey) {
     playButton.classList.remove("d-none");
     pauseButton.classList.remove("d-block");
     pauseButton.classList.add("d-none");
-  }
-  else if (buttonKey === "PAUSE") {
+  } else if (buttonKey === "PAUSE") {
     pauseButton.classList.toggle("d-none");
     playButton.classList.toggle("d-none");
     lapButton.classList.remove("d-none");
     lapButton.classList.add("d-block");
-  }
-  else {
+  } else {
     lapButton.classList.remove("d-block");
     lapButton.classList.add("d-none");
   }
