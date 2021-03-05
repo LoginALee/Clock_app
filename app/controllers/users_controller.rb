@@ -7,8 +7,11 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    current_user.update(user_params)
-    redirect_back(fallback_location: root_path)
+    if current_user.update(user_params)
+      redirect_back(fallback_location: root_path, notice: 'Profile was successfully updated.')
+    else
+      redirect_back(fallback_location: root_path, alert: 'Profile could not be updated.')
+    end
   end
 
   def update_time_zone

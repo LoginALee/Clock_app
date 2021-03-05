@@ -32,6 +32,7 @@ gem 'haml', '~> 5.2', '>= 5.2.1'
 
 gem 'active_storage_validations', '~> 0.9.2'
 
+gem 'mini_magick', '~> 4.11'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

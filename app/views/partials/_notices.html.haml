@@ -1,0 +1,10 @@
+- if notice
+  .alert.alert-primary.alert-dismissible.fade.show
+    = notice
+    %button.close{ 'type': 'button', 'data-dismiss': 'alert', 'aria-label': 'Close'}
+      %span{ 'aria-hidden': 'true' } &times;
+- if alert
+  .alert.alert-danger.alert-dismissible.fade.show
+    = alert
+    %button.close{ 'type': 'button', 'data-dismiss': 'alert', 'aria-label': 'Close'}
+      %span{ 'aria-hidden': 'true' } &times;
