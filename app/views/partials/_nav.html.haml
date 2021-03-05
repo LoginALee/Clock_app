@@ -10,7 +10,7 @@
         = link_to "Alarms", alarms_path, class: "nav-link"
       %li.nav-item.dropdown
         %a.nav-link#navbarDropdownMenuLink{ href: '#', 'role': 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false' }
-          = image_tag (current_user.avatar), class: "img-profile-nav"
+          = user_avatar(current_user)
         
         %div.dropdown-menu{ 'aria-labelledby': 'navbarDropdownMenuLink' }
           = link_to "Edit", profile_path, class: "dropdown-item"

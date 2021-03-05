@@ -3,8 +3,7 @@
   .row.justify-content-center.mt-5
     .col-6
       .row.justify-content-center
-        - if current_user.avatar.attached?
-          = image_tag (current_user.avatar), class: "img-profile"
+        = user_avatar(current_user, 'img-profile')
       = form_with(model: current_user, local: true) do |form|
         .input-group.mt-3.mb-3
           = form.file_field :avatar, class: "form-control", accept: "image/x-png,image/jpeg", required: true
