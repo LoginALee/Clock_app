@@ -11,6 +11,7 @@ module ClockApp
     config.active_job.queue_adapter = :sidekiq
     config.load_defaults 6.1
     config.time_zone = 'Mexico City'
+    config.exceptions_app = routes
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
