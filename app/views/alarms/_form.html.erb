@@ -1,0 +1,14 @@
+<%= form_with model: alarm do |form| %>
+  <div class="form-group">
+    <%= form.label "Hour", class: "form-label" %><br>
+    <%= form.time_field :time, class: "form-control" %><br>
+    <%= form.label "Days", class: "form-label" %><br>
+    <% Date::DAYNAMES.each do |day| %>
+      <%= form.check_box :days, { multiple: true }, day, false %>
+      <%= day %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

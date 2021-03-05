@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_17_194925) do
+ActiveRecord::Schema.define(version: 2021_03_01_174839) do
 
   create_table "alarms", force: :cascade do |t|
-    t.datetime "date_to_sound"
+    t.string "days"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "time"
     t.index ["user_id"], name: "index_alarms_on_user_id"
   end
 
   create_table "stopwatches", force: :cascade do |t|
-    t.text "saved_times"
+    t.string "time"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -29,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_194925) do
   end
 
   create_table "timezones", force: :cascade do |t|
-    t.text "fav_timezones"
+    t.text "name"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_194925) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "time_zone", default: "Central Time (US & Canada)"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

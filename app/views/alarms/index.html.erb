@@ -1,3 +1,11 @@
-<h1>Alarms index</h1>
-
-<%= link_to "New Alarm", new_alarm_path %>
+<div class="container">
+  <h3>My Alarms</h3>
+  <div class="row justify-content-end mt-3">
+    <%= link_to "New Alarm", new_alarm_path, class: "btn btn-primary" %>
+  </div>
+  <div class="row mt-5 mx-auto w-75">
+    <ul class="list-group list-group-flush w-100">
+      <%= render @alarms %>
+    </ul>
+  </div>
+</div>

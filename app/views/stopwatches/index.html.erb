@@ -1,3 +1,10 @@
-<h1>Stopwatch index<h1>
-
-<%= link_to "New Stopwatch", new_stopwatch_path %>
+<div class="container">
+  <h3>Stopwatch</h3>
+  <%= render "clock", stopwatch: @stopwatch %>
+  <div class="row mt-5 mx-auto w-50">
+    <ul class="list-group list-group-flush w-100">
+      <%= render @stopwatches %>
+    </ul>
+  </div>
+</div>
+<%= javascript_pack_tag "clock" %>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Hi, <%= @user.email %></h1>
+    <p>
+      You have activated the next alarm,
+    </p>
+    <% alarm_presenter = AlarmPresenter.new(@alarm) %>
+    <p>Alarm Hour: <%= alarm_presenter.time_with_hour_minutes %></p>
+    <p>Days: <%= alarm_presenter.days_inline %></p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for using ClockApp!</p>
+  </body>
+</html>
