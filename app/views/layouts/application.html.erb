@@ -11,8 +11,7 @@
   </head>
   <body>
     <%= render partial: "partials/nav" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render partial: "partials/notices" %>
     <%= yield %>
     <%= render partial: "partials/toast-alarm" %>
   </body>

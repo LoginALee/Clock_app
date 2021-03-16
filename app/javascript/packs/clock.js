@@ -24,6 +24,7 @@ function timeToString(time) {
 
 let startTime;
 let elapsedTime = 0;
+let lastLapTime = 0;
 let timerInterval;
 
 // Create function to modify innerHTML
@@ -31,6 +32,25 @@ let timerInterval;
 function print(time) {
   document.getElementById("display").innerHTML = time;
   document.getElementById("display-input").value = time;
+}
+
+function printLap(time) {
+  let lap = `<p>${time}</p`;
+  document.getElementById("laps").innerHTML += lap;
+  let field = genereteInputLap(time);
+  document.getElementById("form-fields").append(field);
+}
+
+function clearLaps() {
+  document.getElementById("laps").innerHTML = "";
+}
+
+function genereteInputLap(value) {
+  field = document.createElement("input");
+  field.type = "hidden";
+  field.name = "stopwatch[laps][]";
+  field.value = value;
+  return field;
 }
 
 // Create "start", "pause" and "reset" functions
@@ -53,20 +73,37 @@ function reset() {
   clearInterval(timerInterval);
   print("00:00:00");
   elapsedTime = 0;
+  lastLapTime = 0;
+  clearLaps();
   showButton("PLAY");
+  showButton("LAP");
+}
+
+function lap() {
+  let lapTime = elapsedTime - lastLapTime;
+  if (lapTime > 0) {
+    lastLapTime = elapsedTime;
+    printLap(timeToString(lapTime));
+  } else {
+    alert("Invalid Lap.");
+  }
 }
 
 // Create function to display buttons
 
 function showButton(buttonKey) {
   if (buttonKey === "PLAY") {
-    playButton.classList.remove("d-none")
-    pauseButton.classList.remove("d-block")
-    pauseButton.classList.add("d-none")
-  }
-  else {
-    pauseButton.classList.toggle("d-none")
-    playButton.classList.toggle("d-none")
+    playButton.classList.remove("d-none");
+    pauseButton.classList.remove("d-block");
+    pauseButton.classList.add("d-none");
+  } else if (buttonKey === "PAUSE") {
+    pauseButton.classList.toggle("d-none");
+    playButton.classList.toggle("d-none");
+    lapButton.classList.remove("d-none");
+    lapButton.classList.add("d-block");
+  } else {
+    lapButton.classList.remove("d-block");
+    lapButton.classList.add("d-none");
   }
 }
 // Create event listeners
@@ -74,7 +111,9 @@ function showButton(buttonKey) {
 let playButton = document.getElementById("playButton");
 let pauseButton = document.getElementById("pauseButton");
 let resetButton = document.getElementById("resetButton");
+let lapButton = document.getElementById("lapButton");
 
 playButton.addEventListener("click", start);
 pauseButton.addEventListener("click", pause);
 resetButton.addEventListener("click", reset);
+lapButton.addEventListener("click", lap);

@@ -12,7 +12,6 @@ import "css/styles"
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'jquery'
 import 'packs/alarm.js'
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

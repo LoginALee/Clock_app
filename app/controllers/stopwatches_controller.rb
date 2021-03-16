@@ -29,6 +29,6 @@ class StopwatchesController < ApplicationController
   end
 
   def stopwatch_params
-    params.require(:stopwatch).permit(:time)
+    params.require(:stopwatch).permit(:time, :name, laps: [])
   end
 end

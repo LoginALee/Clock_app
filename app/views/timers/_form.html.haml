@@ -1,0 +1,8 @@
+%form
+  .form-group
+    %label{ 'for': 'nameTimer' } Name
+    %input.form-control#nameTimer{ 'type': 'text', 'aria-describedby': 'nameHelp', 'required': 'true' }
+  .form-group
+    %label{ 'for': 'timeTimer' } Time
+    %input.form-control#timeTimer{ 'type': 'time', 'aria-describedby': 'timerHelp', 'step': '2', 'value': '00:10:00' }
+  %button.btn.btn-primary#btnCreate{ 'type': 'button' } Create

@@ -22,8 +22,6 @@ async function getalarms() {
 }
 
 function evaluateAlarms(alarms) {
-  console.log(alarmSound)
-  console.log("Evaluating alarms...")
   alarms.forEach(evaluateAlarm);
 }
 
@@ -39,8 +37,6 @@ function evaluateAlarm(alarm) {
 function setAlarm(alarm_data) {
   var date = new Date(alarm_data.time); // some mock date
   var milliseconds = date.getTime();
-
-  console.log(milliseconds);
 
   var alarm = new Date(milliseconds);
   var alarmTime = new Date(alarm.getFullYear(), alarm.getMonth(), alarm.getDate(), alarm.getHours(), alarm.getMinutes(), alarm.getSeconds());

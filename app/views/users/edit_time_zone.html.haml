@@ -1,0 +1,6 @@
+.container
+  = form_with(model: @user, url: edit_time_zone_path) do |form|
+    .form-group
+      = form.label "Time zone", class: "form-label"
+      = form.time_zone_select(:time_zone, ActiveSupport::TimeZone.us_zones, {}, class: "form-control")
+    = form.submit class: "btn btn-primary"

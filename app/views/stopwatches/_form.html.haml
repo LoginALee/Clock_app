@@ -1,0 +1,7 @@
+= form_with model: stopwatch, remote: true do |form|
+  #form-fields.row.col-6.mx-auto.mt-3
+    = form.hidden_field :time, id: "display-input"
+    = form.label "Name", class: "form-label"
+    = form.text_field :name, class: "form-control"
+  .row.justify-content-center.mt-3
+    = form.submit "Save Time", class: "btn btn-success"

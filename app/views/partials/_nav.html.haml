@@ -1,0 +1,19 @@
+%nav.navbar.sticky-top.navbar-expand-md.navbar-dark.bg-dark.mb-5
+  = link_to "ClockApp", root_path, class: "navbar-brand font-weight-bold"
+  %ul.navbar-nav.ml-auto.mr-5
+    - if user_signed_in?
+      %li.nav-item
+        = link_to "Time Zones", timezones_path, class: "nav-link"
+      %li.nav-item
+        = link_to "Stopwatches", stopwatches_path, class: "nav-link"
+      %li.nav-item
+        = link_to "Alarms", alarms_path, class: "nav-link"
+      %li.nav-item
+        = link_to "Timers", timers_path, class: "nav-link"
+      %li.nav-item.dropdown
+        %a.nav-link#navbarDropdownMenuLink{ href: '#', 'role': 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false' }
+          = user_avatar(current_user)
+        
+        %div.dropdown-menu{ 'aria-labelledby': 'navbarDropdownMenuLink' }
+          = link_to "Edit", profile_path, class: "dropdown-item"
+          = link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item"
