@@ -1,5 +1,5 @@
 class Stopwatch < ApplicationRecord
-  validates :time, :user_id, presence: true
+  validates :time, :user_id, :name, presence: true
   serialize :laps, Array
   belongs_to :user
 
