@@ -13,7 +13,7 @@ class StopwatchesController < ApplicationController
     if @stopwatch.save
       redirect_to stopwatches_path
     else
-      render :index
+      redirect_to stopwatches_path
     end
   end
 
