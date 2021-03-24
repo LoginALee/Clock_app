@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :stopwatches
   has_many :timezones
   has_one_attached :avatar
-  validates :time_zone, presence: true
+  validates :time_zone, :email, :password, presence: true
   validates :avatar, content_type: %i[png jpg jpeg],
                      dimension: { width: { min: 200, max: 900 }, height: { min: 200, max: 900 } }
 end
