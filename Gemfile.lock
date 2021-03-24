@@ -64,6 +64,10 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.7.2)
@@ -99,6 +103,7 @@ GEM
     erubi (1.10.0)
     et-orbi (1.2.4)
       tzinfo
+    execjs (2.7.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.1.0)
@@ -185,6 +190,12 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    react-rails (2.6.1)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     redis (4.2.5)
     regexp_parser (2.0.3)
     responders (3.0.1)
@@ -298,6 +309,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.2, >= 6.1.2.1)
+  react-rails (~> 2.6, >= 2.6.1)
   redis (~> 4.2, >= 4.2.5)
   rexml (~> 3.2, >= 3.2.4)
   rspec-rails (~> 4.1)
