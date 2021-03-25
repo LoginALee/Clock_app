@@ -1,9 +1,9 @@
 FactoryBot.use_parent_strategy = false
 FactoryBot.define do
   factory :stopwatch do
-    time { '00:10:30' }
+    time { Helpers::Factories.time_rand }
     name { Faker::Lorem.sentence }
-    laps { ["00:01:00", "00:01:30", "00:02:00"] }
+    laps { Helpers::Factories.laps_rand }
     user
   end
 end
