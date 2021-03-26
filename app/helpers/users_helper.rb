@@ -8,4 +8,13 @@ module UsersHelper
       image_tag(gravatar_url, alt: user.email, class: class_name)
     end
   end
+
+  def user_avatar_src(user)
+    if user.avatar.attached?
+      polymorphic_url(user.avatar)
+    else
+      gravatar_id = Digest::MD5.hexdigest(user.email)
+      "https://www.gravatar.com/avatar/#{gravatar_id}?d=identicon"
+    end
+  end
 end

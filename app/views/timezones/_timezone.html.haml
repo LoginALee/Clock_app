@@ -1,9 +1,2 @@
-.col.m-3
-  %div.card.some{ style: 'width: 18rem;'}
-    .card-body
-      %h5.card-title Time Zone
-      %p.card-text= time_zone_format(timezone.name)
-      %p.font-italic.small= time_zone_info(timezone.name)
-      = link_to "Delete", timezone_path(timezone), class: "btn btn-danger",
-                                                      method: :delete,
-                                                      data: { confirm: "Are you sure?" }
+- timezone_presenter = TimezonePresenter.new(timezone)
+= react_component 'Timezone', timezone: timezone_presenter.as_json
