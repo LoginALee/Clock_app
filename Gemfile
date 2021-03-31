@@ -72,6 +72,7 @@ group :test do
   gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
   gem 'rexml', '~> 3.2', '>= 3.2.4'
   gem 'simplecov', '~> 0.21.2'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
