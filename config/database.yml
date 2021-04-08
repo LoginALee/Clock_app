@@ -27,3 +27,7 @@ test:
 production:
   <<: *default
   database: clockapp_production
+  username: <%= ENV['PG_USER_PRODUCTION'] %>
+  password: <%= ENV['PG_PASSWORD_PRODUCTION'] %>
+  host: <%= ENV['PG_HOST_PRODUCTION'] %>
+  port: <%= ENV['PG_PORT_PRODUCTION'] %>
