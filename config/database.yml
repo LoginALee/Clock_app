@@ -27,3 +27,7 @@ test:
 production:
   <<: *default
   database: clockapp_production
+  username: <%= Rails.application.credentials.dig(:production, :pg_user) %>
+  password: <%= Rails.application.credentials.dig(:production, :pg_password) %>
+  host: <%= Rails.application.credentials.dig(:production, :pg_host) %>
+  port: <%= Rails.application.credentials.dig(:production, :pg_port) %>
